@@ -6,10 +6,11 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin-inline: 3rem;
 }
 
 .nav {
-  margin-top: 5rem;
+  margin-block: 2rem;
   color: var(--nav-text-color);
 }
 
@@ -17,7 +18,6 @@ ul.nav-list {
   position: relative;
   display: flex;
   justify-content: space-around;
-  margin-inline: 3rem;
   border-bottom: solid 1px var(--nav-text-color);
 }
 
@@ -45,4 +45,17 @@ ul.nav-list .nav-indicator {
   height: 1px;
   background-color: var(--nav-text-active-color);
   transition: all 200ms;
+}
+
+.hide {
+  display: none;
+}
+
+.time-info {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.current-time > span {
+  color: var(--nav-text-hover-color);
 }

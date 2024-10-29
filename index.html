@@ -10,17 +10,25 @@
 <body>
   <nav class="nav">
     <ul class="nav-list">
-      <li class="nav-list-item active" onclick="handleNavItemClick(event)"><a>Cupertino</a></li>
-      <li class="nav-list-item" onclick="handleNavItemClick(event)"><a>New York City</a></li>
-      <li class="nav-list-item" onclick="handleNavItemClick(event)"><a>London</a></li>
-      <li class="nav-list-item" onclick="handleNavItemClick(event)"><a>Amsterdam</a></li>
-      <li class="nav-list-item" onclick="handleNavItemClick(event)"><a>Tokyo</a></li>
-      <li class="nav-list-item" onclick="handleNavItemClick(event)"><a>Hong Kong</a></li>
-      <li class="nav-list-item" onclick="handleNavItemClick(event)"><a>Sydney</a></li>
+      <!-- The Safari CORS policy prevents fetching of a local JSON file, so these values are hardcoded. -->
+      <li data-city="cupertino" class="nav-list-item active" onclick="handleNavItemClick(event)"><a>Cupertino</a></li>
+      <li data-city="new-york-city" class="nav-list-item" onclick="handleNavItemClick(event)"><a>New York City</a></li>
+      <li data-city="london" class="nav-list-item" onclick="handleNavItemClick(event)"><a>London</a></li>
+      <li data-city="amsterdam" class="nav-list-item" onclick="handleNavItemClick(event)"><a>Amsterdam</a></li>
+      <li data-city="tokyo" class="nav-list-item" onclick="handleNavItemClick(event)"><a>Tokyo</a></li>
+      <li data-city="hong-kong" class="nav-list-item" onclick="handleNavItemClick(event)"><a>Hong Kong</a></li>
+      <li data-city="sydney" class="nav-list-item" onclick="handleNavItemClick(event)"><a>Sydney</a></li>
 
       <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
     </ul>
   </nav>
+
+  <div>
+    <!-- I pre-created the 3 different states of getting the time for the selected city, so that I can dynamically update whichever I need to. -->
+    <h1 class="time-info loading-message" id="loadingMessage">Loading current time in <span class="cityNameDisplay">Cupertino</span>...</h1>
+    <h1 class="time-info current-time hide" id="currentTime">Current time at <span class="cityNameDisplay"></span> is <span id="timeDisplay"></span></h1>
+    <h1 class="time-info hide" id="failedToLoad">Failed to load current time at location.</h1>
+  </div>
 
   <script src="script.js"></script>
 </body>
