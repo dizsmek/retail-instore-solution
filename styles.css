@@ -1,0 +1,48 @@
+:root {
+  --nav-text-color: #a3a3a3;
+  --nav-text-active-color: #0b0b0b;
+  --nav-text-hover-color: #427caa;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+  margin-top: 5rem;
+  color: var(--nav-text-color);
+}
+
+ul.nav-list {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  margin-inline: 3rem;
+  border-bottom: solid 1px var(--nav-text-color);
+}
+
+ul.nav-list li.nav-list-item {
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+ul.nav-list li.nav-list-item a {
+  transition: color 100ms;
+}
+
+ul.nav-list li.nav-list-item.active {
+  color: var(--nav-text-active-color);
+  cursor: default;
+}
+
+ul.nav-list li.nav-list-item:not(.active):hover a {
+  color: var(--nav-text-hover-color);
+}
+
+ul.nav-list .nav-indicator {
+  position: absolute;
+  bottom: -1px;
+  height: 1px;
+  background-color: var(--nav-text-active-color);
+  transition: all 200ms;
+}
